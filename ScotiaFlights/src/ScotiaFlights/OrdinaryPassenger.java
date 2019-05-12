@@ -25,6 +25,10 @@ public class OrdinaryPassenger extends Passenger{
                 
 	}
 
+    OrdinaryPassenger(String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
         public String GetName() {
 		Scanner kboard = new Scanner(System.in);

@@ -45,7 +45,7 @@ public Flight(String nos)
 	Seats[7] = S8;
 }
 
-public void displayCarriage()
+public void displaySeating()
 {
 	System.out.println("Flight "+flightnos);
 	for (int i=0; i<4; i++)
@@ -138,7 +138,7 @@ public void retrieveFromFile()
     String query="";
    // int loopcounter = 0;
     
-    query = "select * from train where flightnos = '"+flightnos+"'";
+    query = "select * from flight where flightnos = '"+flightnos+"'";
     
     try {           
         connection = JDBCMySQLConnection.getConnection();
@@ -189,11 +189,11 @@ public void menu()
 	{
 		switch(choice)
 		{
-		case 1: this.displayCarriage();	break;
+		case 1: this.displaySeating();	break;
 		case 2: this.bookSeat(); 		break;
 		case 3: this.cancelSeat();		break;
-		//case 4:	this.saveToFile();		break;
-		//case 5: this.retrieveFromFile();break;
+		case 4:	this.saveToFile();		break;
+		case 5: this.retrieveFromFile();break;
 		}
 		System.out.println("1. Display Seat, 2. Book Seat, 3. Cancel Seat, 6. Exit");
 		choice = kboard.nextInt();

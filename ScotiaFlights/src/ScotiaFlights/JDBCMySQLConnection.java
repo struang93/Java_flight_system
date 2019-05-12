@@ -2,6 +2,7 @@ package ScotiaFlights;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 public class JDBCMySQLConnection 
 {
@@ -21,6 +22,8 @@ public class JDBCMySQLConnection
             e.printStackTrace();
         }
     }
+    
+    
      
     private Connection createConnection() {
  
@@ -34,8 +37,27 @@ public class JDBCMySQLConnection
         return connection;
     }   
      
+   
     public static Connection getConnection() 
     {
         return instance.createConnection();
     }
-}
+    
+    public static void createTable()throws Exception{
+        try{
+            Connection connection = getConnection();
+            PreparedStatement create = null;
+connection.prepareStatement("CREATE TABLE IF NOT EXISTS flight(flightnos varchar(5) NOT NULL, seatnos int(2), status varchar(5) NOT NULL, passengertype varchar(8) NOT NULL, passengername varchar(30) NOT NULL, passengeremail varchar(15) NOT NULL, PRIMARY KEY(flightnos))");
+            
+            create.executeUpdate();
+        }catch(Exception e){System.out.println(e);}
+            finally{System.out.println("function complete");}
+        }
+
+    private static class connection {
+
+        public connection() {
+        }
+    }
+    }
+

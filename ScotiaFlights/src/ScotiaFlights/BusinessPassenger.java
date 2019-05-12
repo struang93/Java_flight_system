@@ -35,6 +35,10 @@ public class BusinessPassenger extends Passenger {
         Company = company;
     }
 
+    BusinessPassenger(String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public String GetName() {
         Scanner kboard = new Scanner(System.in);

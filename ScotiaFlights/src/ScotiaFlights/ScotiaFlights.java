@@ -19,11 +19,11 @@ public class ScotiaFlights {
          //OrdinaryPassenger cli = new OrdinaryPassenger();
          //IslandPassenger cli = new IslandPassenger();
          //BusinessPassenger cli = new BusinessPassenger();
-         Seat cli = new Seat(0);
+         //Seat cli = new Seat(0);
          Flight abc = new Flight("");
          
          //cli.bookSeat();
-         abc.displayCarriage();
+         abc.bookSeat();
          
         
          
